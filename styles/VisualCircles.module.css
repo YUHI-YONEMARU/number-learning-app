@@ -1,0 +1,39 @@
+.circleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: #ff6347;
+  border-radius: 50%;
+}
+
+.tenGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.hundredGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #32cd32;
+  border-radius: 10px;
+}
+
+.circleHundred {
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+}

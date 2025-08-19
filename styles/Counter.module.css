@@ -1,0 +1,24 @@
+/* styles/Counter.module.css */
+.counter {
+  margin: 20px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #005bb5;
+}
