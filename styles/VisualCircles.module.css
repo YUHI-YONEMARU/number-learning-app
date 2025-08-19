@@ -1,6 +1,6 @@
 .circleContainer {
   margin-top: 20px;
-  margin-bottom: 100px; /* ボタン分の余白 */
+  margin-bottom: 120px; /* ボタン分の余白 */
 }
 
 .columnsContainer {
@@ -10,19 +10,30 @@
 }
 
 .column {
+  position: relative; /* 横棒のabsolute配置の基準 */
   display: flex;
   flex-direction: column; /* 通常の順序 */
   justify-content: flex-end; /* 下部に揃える */
   align-items: center;
   gap: 5px; /* オブジェクト間の間隔 */
   min-width: 60px; /* 列の最小幅 */
-  height: calc(100vh - 200px); /* 固定高さ（画面高さから余白を除く） */
+  height: calc(100vh - 320px); /* ユーザーの指定通り */
   overflow-y: auto; /* スクロール対応 */
+  padding-bottom: 8px; /* 横棒のスペース（4px + マージン） */
+}
+
+.objects {
+  display: flex;
+  flex-direction: column; /* 通常の順序 */
+  justify-content: flex-end; /* 下部に揃える */
+  align-items: center;
+  gap: 5px; /* オブジェクト間の間隔 */
+  width: 100%;
 }
 
 .circle {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-color: #ffcc80; /* 薄いオレンジ */
   border-radius: 50%;
 }
@@ -59,10 +70,40 @@
   font-weight: bold;
 }
 
+.plateHundred {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px; /* hundredGroupと同じ幅 */
+  height: 4px; /* 横棒の高さ */
+  background-color: #e65100; /* 濃いオレンジ */
+}
+
+.plateTen {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px; /* tenGroupと同じ幅 */
+  height: 4px; /* 横棒の高さ */
+  background-color: #ff8c00; /* 中間のオレンジ */
+}
+
+.plateOne {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px; /* circleと同じ幅 */
+  height: 4px; /* 横棒の高さ */
+  background-color: #ffcc80; /* 薄いオレンジ */
+}
+
 @media (max-width: 480px) {
   .column {
     min-width: 50px;
-    height: calc(100vh - 180px); /* スマホで少し小さめ */
+    height: calc(100vh - 280px); /* スマホで少し小さめ */
   }
 
   .circle {
@@ -86,5 +127,17 @@
 
   .circleHundred {
     font-size: 12px;
+  }
+
+  .plateHundred {
+    width: 50px;
+  }
+
+  .plateTen {
+    width: 40px;
+  }
+
+  .plateOne {
+    width: 15px;
   }
 }
