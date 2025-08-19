@@ -1,72 +1,39 @@
-.counter {
-  margin: 20px 0;
-}
-
-.countDisplay {
-  font-size: 48px; /* 大きなフォント */
-  font-weight: bold;
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
-
 .buttonContainer {
   position: fixed;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  justify-content: center;
   gap: 10px;
-  width: 90%; /* スマホで幅を広く */
-  max-width: 600px; /* 最大幅を制限 */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .button {
-  padding: 15px 20px; /* タッチしやすく */
-  font-size: 18px; /* 読みやすく */
-  cursor: pointer;
-  background-color: #0070f3; /* 青 */
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 8px;
-  flex: 1; /* ボタンの幅を均等に */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .button:hover {
-  background-color: #005bb5;
+  background-color: #0056b3;
 }
 
-/* 「+1」ボタンを少し強調 */
-.button:nth-child(3) {
-  background-color: #ff4500; /* オレンジで目立たせる */
+.button:disabled {
+  background-color: #cccccc; /* グレーアウト */
+  cursor: not-allowed; /* ポインター無効 */
+  opacity: 0.6; /* 薄く表示 */
 }
 
-.button:nth-child(3):hover {
-  background-color: #d83b01;
-}
-
-/* リセットボタンのスタイル */
-.button:last-child {
-  background-color: #555; /* グレーで区別 */
-}
-
-.button:last-child:hover {
-  background-color: #333;
-}
-
-@media (min-width: 768px) {
-  .buttonContainer {
-    width: auto; /* PCでは幅を自動調整 */
-  }
-
+@media (max-width: 480px) {
   .button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-
-  .countDisplay {
-    font-size: 64px; /* PCではさらに大きく */
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }

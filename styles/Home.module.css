@@ -1,7 +1,78 @@
 .container {
-  text-align: center;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  min-height: 100vh; /* 画面全体の高さ */
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   padding-bottom: 100px; /* ボタン分の余白 */
+}
+
+.title {
+  margin: 20px 0;
+  line-height: 1.15;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.countWrapper {
+  display: flex;
+  justify-content: space-between; /* 数字を左、スピーカーを右に */
+  align-items: center;
+  width: 90%; /* 画面幅の90%で右端寄せを強調 */
+  max-width: 600px; /* 最大幅を制限 */
+  margin: 10px 0 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc; /* 薄いグレーの線で囲む */
+  border-radius: 5px; /* 角を丸く */
+}
+
+.countDisplay {
+  flex: 1; /* 中央寄せでスペースを均等に */
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center; /* 中央寄せに変更 */
+}
+
+.speakerButton {
+  padding: 8px;
+  font-size: 1.5rem; /* 絵文字を大きく */
+  background-color: #ffffff; /* 白背景 */
+  color: #333; /* アイコンを黒に近い色で視認性確保 */
+  border: 1px solid #ccc; /* 薄いグレー枠 */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.speakerButton:hover {
+  background-color: #f5f5f5; /* ホバー時に薄いグレー */
+  transform: scale(1.1); /* 軽い拡大で視覚的フィードバック */
+}
+
+.speakerButton:focus {
+  outline: 2px solid #333; /* フォーカス時のアクセシビリティ */
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .countWrapper {
+    width: 95%; /* スマホで幅を広げる */
+    padding: 8px;
+    margin: 8px 0 16px 0;
+  }
+
+  .countDisplay {
+    font-size: 1.5rem;
+  }
+
+  .speakerButton {
+    padding: 6px;
+    font-size: 1.2rem;
+  }
 }

@@ -17,23 +17,23 @@
   align-items: center;
   gap: 5px; /* オブジェクト間の間隔 */
   min-width: 60px; /* 列の最小幅 */
-  height: calc(100vh - 320px); /* ユーザーの指定通り */
+  height: calc(100vh - 320px); /* ユーザーの指定 */
   overflow-y: auto; /* スクロール対応 */
-  padding-bottom: 8px; /* 横棒のスペース（4px + マージン） */
+  padding-bottom: 8px; /* 横棒のスペース */
 }
 
 .objects {
   display: flex;
-  flex-direction: column; /* 通常の順序 */
+  flex-direction: column-reverse; /* 最新のオブジェクトを上部に */
   justify-content: flex-end; /* 下部に揃える */
   align-items: center;
-  gap: 5px; /* オブジェクト間の間隔 */
+  gap: 5px;
   width: 100%;
 }
 
 .circle {
-  width: 30px;
-  height: 30px;
+  width: 30px; /* ユーザー指定 */
+  height: 30px; /* ユーザー指定 */
   background-color: #ffcc80; /* 薄いオレンジ */
   border-radius: 50%;
 }
@@ -75,7 +75,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px; /* hundredGroupと同じ幅 */
+  width: 60px; /* ユーザー指定：統一 */
   height: 4px; /* 横棒の高さ */
   background-color: #e65100; /* 濃いオレンジ */
 }
@@ -85,7 +85,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px; /* tenGroupと同じ幅 */
+  width: 60px; /* ユーザー指定：統一 */
   height: 4px; /* 横棒の高さ */
   background-color: #ff8c00; /* 中間のオレンジ */
 }
@@ -95,7 +95,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px; /* circleと同じ幅 */
+  width: 60px; /* ユーザー指定：統一 */
   height: 4px; /* 横棒の高さ */
   background-color: #ffcc80; /* 薄いオレンジ */
 }
@@ -107,8 +107,8 @@
   }
 
   .circle {
-    width: 15px;
-    height: 15px;
+    width: 25px; /* スマホで少し小さめ */
+    height: 25px;
   }
 
   .tenGroup {
@@ -129,15 +129,9 @@
     font-size: 12px;
   }
 
-  .plateHundred {
-    width: 50px;
-  }
-
-  .plateTen {
-    width: 40px;
-  }
-
+  .plateHundred,
+  .plateTen,
   .plateOne {
-    width: 15px;
+    width: 50px; /* スマホで統一幅を少し小さめ */
   }
 }
