@@ -12,7 +12,7 @@ export default function VisualCircles({ count }: VisualCirclesProps) {
     const tens = Math.floor((count % 100) / 10);
     const ones = count % 10;
 
-    const elements: JSX.Element[] = [];
+    const elements: React.JSX.Element[] = [];
 
     // 100のグループ
     for (let i = 0; i < hundreds; i++) {
