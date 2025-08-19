@@ -15,22 +15,26 @@ export default function Counter({ onIncrement, onReset, count }: CounterProps) {
 
   return (
     <div className={styles.buttonContainer}>
-      <button
-        className={styles.button}
-        onClick={() => onIncrement(100)}
-        disabled={isPlus100Disabled}
-        aria-label="プラス100"
-      >
-        +100
-      </button>
-      <button
-        className={styles.button}
-        onClick={() => onIncrement(10)}
-        disabled={isPlus10Disabled}
-        aria-label="プラス10"
-      >
-        +10
-      </button>
+      {count >= 100 && (
+        <button
+          className={styles.button}
+          onClick={() => onIncrement(100)}
+          disabled={isPlus100Disabled}
+          aria-label="プラス100"
+        >
+          +100
+        </button>
+      )}
+      {count >= 10 && (
+        <button
+          className={styles.button}
+          onClick={() => onIncrement(10)}
+          disabled={isPlus10Disabled}
+          aria-label="プラス10"
+        >
+          +10
+        </button>
+      )}
       <button
         className={styles.button}
         onClick={() => onIncrement(1)}
@@ -40,7 +44,7 @@ export default function Counter({ onIncrement, onReset, count }: CounterProps) {
         +1
       </button>
       <button
-        className={styles.button}
+        className={styles.resetButton}
         onClick={onReset}
         aria-label="リセット"
       >

@@ -13,7 +13,7 @@
 .button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: #007bff; /* 青 */
   color: white;
   border: none;
   border-radius: 5px;
@@ -31,8 +31,24 @@
   opacity: 0.6; /* 薄く表示 */
 }
 
+.resetButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #6c757d; /* グレーっぽい色 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.resetButton:hover {
+  background-color: #5a6268; /* ホバー時に少し濃いグレー */
+}
+
 @media (max-width: 480px) {
-  .button {
+  .button,
+  .resetButton {
     padding: 8px 16px;
     font-size: 14px;
   }
