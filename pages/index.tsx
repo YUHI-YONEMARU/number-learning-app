@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import Head from 'next/head';
 import Counter from '../components/Counter';
 import VisualCircles from '../components/VisualCircles';
 import styles from '../styles/Home.module.css';
@@ -16,7 +17,11 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1>数の学習アプリ</h1>
+      <Head>
+        <title>かずがふえていくアプリ</title>
+        <meta name="description" content="子ども向け数の学習アプリ" />
+      </Head>
+      <h1>かずがふえていくアプリ</h1>
       <Counter count={count} onIncrement={handleIncrement} onReset={handleReset} />
       <VisualCircles count={count} />
     </div>

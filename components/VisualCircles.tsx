@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styles from '../styles/VisualCircles.module.css';
 
@@ -27,11 +26,7 @@ export default function VisualCircles({ count }: VisualCirclesProps) {
     for (let i = 0; i < tens; i++) {
       elements.push(
         <div key={`ten-${i}`} className={styles.tenGroup}>
-          {Array(10)
-            .fill(0)
-            .map((_, j) => (
-              <div key={`ten-circle-${i}-${j}`} className={styles.circle} />
-            ))}
+          <div className={styles.circleTen}>10</div>
         </div>
       );
     }
