@@ -8,48 +8,51 @@ interface CounterProps {
 }
 
 export default function Counter({ onIncrement, onReset, count }: CounterProps) {
-  // カウントが1000未満の場合のみボタンを有効化
-  const isPlus100Disabled = count >= 900; // 1000 - 100
-  const isPlus10Disabled = count >= 990; // 1000 - 10
-  const isPlus1Disabled = count >= 999; // 1000 - 1
+  const isPlus100Disabled = count >= 900;
+  const isPlus10Disabled = count >= 990;
+  const isPlus1Disabled = count >= 999;
 
   return (
     <div className={styles.buttonContainer}>
-      {count >= 100 && (
+      <div className={styles.incrementButtons}>
+        {count >= 100 && (
+          <button
+            className={styles.button}
+            onClick={() => onIncrement(100)}
+            disabled={isPlus100Disabled}
+            aria-label="プラス100"
+          >
+            +100
+          </button>
+        )}
+        {count >= 10 && (
+          <button
+            className={styles.button}
+            onClick={() => onIncrement(10)}
+            disabled={isPlus10Disabled}
+            aria-label="プラス10"
+          >
+            +10
+          </button>
+        )}
+      </div>
+      <div className={styles.oneAndReset}>
         <button
           className={styles.button}
-          onClick={() => onIncrement(100)}
-          disabled={isPlus100Disabled}
-          aria-label="プラス100"
+          onClick={() => onIncrement(1)}
+          disabled={isPlus1Disabled}
+          aria-label="プラス1"
         >
-          +100
+          +1
         </button>
-      )}
-      {count >= 10 && (
         <button
-          className={styles.button}
-          onClick={() => onIncrement(10)}
-          disabled={isPlus10Disabled}
-          aria-label="プラス10"
+          className={styles.resetButton}
+          onClick={onReset}
+          aria-label="リセット"
         >
-          +10
+          リセット
         </button>
-      )}
-      <button
-        className={styles.button}
-        onClick={() => onIncrement(1)}
-        disabled={isPlus1Disabled}
-        aria-label="プラス1"
-      >
-        +1
-      </button>
-      <button
-        className={styles.resetButton}
-        onClick={onReset}
-        aria-label="リセット"
-      >
-        リセット
-      </button>
+      </div>
     </div>
   );
 }

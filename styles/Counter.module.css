@@ -6,19 +6,46 @@
   display: flex;
   gap: 10px;
   justify-content: center;
+  align-items: flex-start;
+  width: 360px; /* スマホ横幅 */
+}
+
+.incrementButtons {
+  display: flex;
+  gap: 10px;
+  flex: 1; /* +10, +100で均等分割 */
+}
+
+/* count < 10 の場合、incrementButtonsを非表示 */
+.buttonContainer:not(:has(.incrementButtons > button)) .incrementButtons {
+  display: none;
+}
+
+/* incrementButtonsが非表示の場合、oneAndResetを全幅に */
+.buttonContainer:not(:has(.incrementButtons > button)) .oneAndReset {
+  flex: none;
+  width: 100%;
+}
+
+.oneAndReset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   align-items: center;
-  z-index: 1000;
+  flex: 1; /* 通常は半分 */
 }
 
 .button {
-  padding: 10px 20px;
+  padding: 10px;
   font-size: 16px;
-  background-color: #007bff; /* 青 */
-  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 100%; /* 親コンテナの幅を埋める */
+  box-sizing: border-box;
+  background-color: #007bff;
+  color: white;
 }
 
 .button:hover {
@@ -26,30 +53,50 @@
 }
 
 .button:disabled {
-  background-color: #cccccc; /* グレーアウト */
-  cursor: not-allowed; /* ポインター無効 */
-  opacity: 0.6; /* 薄く表示 */
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .resetButton {
-  padding: 10px 20px;
+  padding: 10px;
   font-size: 16px;
-  background-color: #6c757d; /* グレーっぽい色 */
-  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 360px; /* 常に全幅 */
+  box-sizing: border-box;
+  background-color: #6c757d;
+  color: white;
 }
 
 .resetButton:hover {
-  background-color: #5a6268; /* ホバー時に少し濃いグレー */
+  background-color: #5a6268;
 }
 
 @media (max-width: 480px) {
+  .buttonContainer {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .incrementButtons {
+    gap: 8px;
+  }
+
+  .oneAndReset {
+    gap: 8px;
+  }
+
   .button,
   .resetButton {
-    padding: 8px 16px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .resetButton {
+    width: 100%; /* スマホで画面幅に */
+    max-width: 360px;
   }
 }

@@ -8,7 +8,7 @@ export default function Home() {
   const [count, setCount] = useState(0);
 
   const handleIncrement = (value: number) => {
-    if (count + value <= 1000) { // 最大1000の制限
+    if (count + value <= 1000) {
       setCount((prev) => prev + value);
     }
   };
@@ -17,18 +17,16 @@ export default function Home() {
     setCount(0);
   };
 
-  // 音声合成用の関数
   const speak = (text: string) => {
-    window.speechSynthesis.cancel(); // 既存の音声をキャンセル
+    window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'ja-JP';
-    utterance.rate = 0.8; // 子ども向けにゆっくり
-    utterance.volume = 1.0; // 音量最大
-    utterance.pitch = 1.0; // 標準ピッチ
+    utterance.rate = 0.8;
+    utterance.volume = 1.0;
+    utterance.pitch = 1.0;
     window.speechSynthesis.speak(utterance);
   };
 
-  // カウントを日本語の数字に変換
   const numberToJapanese = (num: number): string => {
     if (num === 0) return 'ゼロ';
     const units = ['', 'じゅう', 'ひゃく', 'せん'];
@@ -58,17 +56,19 @@ export default function Home() {
         <meta name="description" content="数を増やして視覚化するアプリ" />
       </Head>
       <h1 className={styles.title}>かずがふえていくアプリ</h1>
-      <div className={styles.countWrapper}>
-        <div className={styles.countDisplay} aria-live="polite">{count}</div>
-        <button
-          className={styles.speakerButton}
-          onClick={() => speak(numberToJapanese(count))}
-          aria-label="現在の数を読み上げる"
-        >
-          🔊
-        </button>
+      <div className={styles.wrapper}>
+        <VisualCircles count={count} />
+        <div className={styles.countWrapper}>
+          <div className={styles.countDisplay} aria-live="polite">{count}</div>
+          <button
+            className={styles.speakerButton}
+            onClick={() => speak(numberToJapanese(count))}
+            aria-label="現在の数を読み上げる"
+          >
+            🔊
+          </button>
+        </div>
       </div>
-      <VisualCircles count={count} />
       <Counter onIncrement={handleIncrement} onReset={handleReset} count={count} />
     </div>
   );
