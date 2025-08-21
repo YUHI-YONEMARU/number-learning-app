@@ -14,8 +14,8 @@ export default function Counter({ onIncrement, onReset, count }: CounterProps) {
 
   return (
     <div className={styles.buttonContainer}>
-      <div className={styles.incrementButtons}>
-        {count >= 100 && (
+      {count >= 100 && (
+        <div className={styles.incrementButton}>
           <button
             className={styles.button}
             onClick={() => onIncrement(100)}
@@ -24,8 +24,10 @@ export default function Counter({ onIncrement, onReset, count }: CounterProps) {
           >
             +100
           </button>
-        )}
-        {count >= 10 && (
+        </div>
+      )}
+      {count >= 10 && (
+        <div className={styles.incrementButton}>
           <button
             className={styles.button}
             onClick={() => onIncrement(10)}
@@ -34,9 +36,9 @@ export default function Counter({ onIncrement, onReset, count }: CounterProps) {
           >
             +10
           </button>
-        )}
-      </div>
-      <div className={styles.oneAndReset}>
+        </div>
+      )}
+      <div className={styles.incrementButton}>
         <button
           className={styles.button}
           onClick={() => onIncrement(1)}
@@ -45,6 +47,8 @@ export default function Counter({ onIncrement, onReset, count }: CounterProps) {
         >
           +1
         </button>
+      </div>
+      <div className={styles.reset}>
         <button
           className={styles.resetButton}
           onClick={onReset}

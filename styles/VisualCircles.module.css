@@ -1,6 +1,6 @@
 .circleContainer {
   margin-top: 20px;
-  margin-bottom: 120px; /* ボタン分の余白 */
+  margin-bottom: 30px; /* ボタン分の余白 */
 }
 
 .columnsContainer {
@@ -32,8 +32,8 @@
 }
 
 .circle {
-  width: 30px; /* ユーザー指定 */
-  height: 30px; /* ユーザー指定 */
+  width: 50px; 
+  height: 50px; 
   background-color: #ffcc80; /* 薄いオレンジ */
   border-radius: 50%;
 }
@@ -58,8 +58,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: #e65100; /* 濃いオレンジ */
   border-radius: 10px;
 }
@@ -103,12 +103,12 @@
 @media (max-width: 480px) {
   .column {
     min-width: 50px;
-    height: calc(100vh - 280px); /* スマホで少し小さめ */
+    height: calc(100vh - 400px); /* スマホで少し小さめ */
   }
 
   .circle {
-    width: 25px; /* スマホで少し小さめ */
-    height: 25px;
+    width: 40px; /* スマホで少し小さめ */
+    height: 40px;
   }
 
   .tenGroup {
@@ -117,8 +117,8 @@
   }
 
   .hundredGroup {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 
   .circleTen {

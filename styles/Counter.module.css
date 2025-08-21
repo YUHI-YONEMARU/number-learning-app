@@ -4,35 +4,26 @@
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
   align-items: flex-start;
   width: 360px; /* スマホ横幅 */
 }
 
-.incrementButtons {
-  display: flex;
-  gap: 10px;
-  flex: 1; /* +10, +100で均等分割 */
-}
-
-/* count < 10 の場合、incrementButtonsを非表示 */
-.buttonContainer:not(:has(.incrementButtons > button)) .incrementButtons {
-  display: none;
-}
-
-/* incrementButtonsが非表示の場合、oneAndResetを全幅に */
-.buttonContainer:not(:has(.incrementButtons > button)) .oneAndReset {
-  flex: none;
-  width: 100%;
-}
-
-.oneAndReset {
+.incrementButton {
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
-  flex: 1; /* 通常は半分 */
+  flex: 1;
+}
+.reset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: none;
+  width: 100%;
 }
 
 .button {
@@ -85,7 +76,7 @@
     gap: 8px;
   }
 
-  .oneAndReset {
+  .one {
     gap: 8px;
   }
 

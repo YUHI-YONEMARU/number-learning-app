@@ -24,7 +24,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px 0;
+  margin: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@
 
 .countWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   padding: 10px;
@@ -42,6 +42,7 @@
 }
 
 .countDisplay {
+  flex: 1; /* 中央寄せでスペースを均等に */
   font-size: 3rem;
   font-weight: bold;
   color: #333;
@@ -50,6 +51,7 @@
 
 .speakerButton {
   padding: 8px;
+  margin-right:8px;
   font-size: 1.5rem;
   background-color: #ffffff;
   color: #333;
@@ -76,12 +78,12 @@
 
   .wrapper {
     padding: 8px;
-    margin: 8px 0;
+    margin: 20px 0;
     max-height: calc(100vh - 180px); /* スマホで余白調整 */
   }
 
   .countWrapper {
-    padding: 8px;
+    padding: 0px;
   }
 
   .countDisplay {
