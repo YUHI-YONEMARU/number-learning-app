@@ -32,22 +32,28 @@
 }
 
 .countWrapper {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
+  position: relative;
 }
 
 .countDisplay {
-  flex: 1; /* 中央寄せでスペースを均等に */
   font-size: 3rem;
   letter-spacing: 1.2em;
   text-indent: 1.2em;
   font-weight: bold;
   color: #333;
   text-align: center;
+}
+
+.speakerArea {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
 }
 
 .speakerButton {

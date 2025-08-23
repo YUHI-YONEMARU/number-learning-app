@@ -71,13 +71,15 @@ export default function Home() {
       </div>
       <div className={styles.countWrapper}>
         <div className={styles.countDisplay} aria-live="polite">{count}</div>
-         {/*<button
+        <div className={styles.speakerArea}>
+         <button
           className={styles.speakerButton}
           onClick={() => speak(numberToJapanese(count))}
           aria-label="現在の数を読み上げる"
         >
         🔊
-        </button> */}
+        </button>
+         </div>
       </div>
       <Counter onIncrement={handleIncrement} onReset={handleReset} count={count} />
     </div>
