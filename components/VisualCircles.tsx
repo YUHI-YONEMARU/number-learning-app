@@ -75,6 +75,7 @@ export default function VisualCircles({ count }: VisualCirclesProps) {
             exit={{ opacity: 0, transition: { duration: 0.3 } }} // フェードアウトのみ
             transition={{ duration: 0.3 }}
           />
+            <div className={styles.circleOne}>1</div>
         </AnimatePresence>
       );
     }

@@ -17,7 +17,7 @@
   align-items: center;
   gap: 5px; /* オブジェクト間の間隔 */
   min-width: 60px; /* 列の最小幅 */
-  height: calc(100vh - 320px); /* ユーザーの指定 */
+  height: calc(100vh - 400px); /* ユーザーの指定 */
   overflow-y: auto; /* スクロール対応 */
   padding-bottom: 8px; /* 横棒のスペース */
 }

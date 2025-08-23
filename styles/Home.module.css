@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-bottom: 120px; /* ボタン余白 */
+  padding-bottom: 0px; /* ボタン余白 */
   max-width: 360px; /* スマホ横幅 */
   margin: 0 auto; /* 中央寄せ */
 }
@@ -19,8 +19,8 @@
 
 .wrapper {
   width: 100%; /* 360px */
-  max-height: calc(100vh - 200px); /* タイトル60px + ボタン120px + 余白20px */
-  overflow-y: auto; /* スクロール可能 */
+  max-height: calc(100vh - 340px); /* タイトル60px + ボタン120px + 余白20px */
+  /*overflow-y: auto;  スクロール可能 */
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
@@ -36,7 +36,6 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -80,10 +79,6 @@
     padding: 8px;
     margin: 20px 0;
     max-height: calc(100vh - 180px); /* スマホで余白調整 */
-  }
-
-  .countWrapper {
-    padding: 0px;
   }
 
   .countDisplay {
