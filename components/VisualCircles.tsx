@@ -83,14 +83,18 @@ export default function VisualCircles({ count }: VisualCirclesProps) {
 
     return (
       <div className={styles.columnsContainer}>
+        {count >= 100 && (
         <div className={styles.column}>
           <div className={styles.objects}>{hundredElements}</div>
           <div className={styles.plateHundred} />
         </div>
+        )}
+        {count >= 10 && (
         <div className={styles.column}>
           <div className={styles.objects}>{tenElements}</div>
           <div className={styles.plateTen} />
         </div>
+        )}
         <div className={styles.column}>
           <div className={styles.objects}>{oneElements}</div>
           <div className={styles.plateOne} />
