@@ -35,12 +35,22 @@ export default function Home() {
     let result = '';
     let n = num;
     let unitIndex = 0;
+    let unit = "";
 
     while (n > 0) {
       const digit = n % 10;
       if (digit > 0) {
         const digitStr = digit === 1 && unitIndex > 0 ? '' : digits[digit];
-        result = digitStr + units[unitIndex] + result;
+        // 300台
+        if (digit === 3 && unitIndex === 2) {
+          unit = 'びゃく';
+        // 600,800台
+        } else if ( (digit === 6 || digit === 8) && unitIndex === 2) {
+          unit = 'ぴゃく';  
+        } else {
+          unit = units[unitIndex];
+        }
+        result = digitStr + unit + result;
       }
       n = Math.floor(n / 10);
       unitIndex++;
@@ -61,13 +71,13 @@ export default function Home() {
       </div>
       <div className={styles.countWrapper}>
         <div className={styles.countDisplay} aria-live="polite">{count}</div>
-        <button
+         <button
           className={styles.speakerButton}
           onClick={() => speak(numberToJapanese(count))}
           aria-label="現在の数を読み上げる"
         >
-          🔊
-        </button>
+        🔊
+        </button> 
       </div>
       <Counter onIncrement={handleIncrement} onReset={handleReset} count={count} />
     </div>

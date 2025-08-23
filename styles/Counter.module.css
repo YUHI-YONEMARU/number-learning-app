@@ -28,7 +28,7 @@
 
 .button {
   padding: 10px;
-  font-size: 16px;
+  font-size: 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -80,13 +80,14 @@
     gap: 8px;
   }
 
-  .button,
-  .resetButton {
+  .button {
     padding: 10px;
-    font-size: 15px;
+    font-size: 19px;
   }
 
   .resetButton {
+    padding: 10px;
+    font-size: 15px;
     width: 100%; /* スマホで画面幅に */
     max-width: 360px;
   }
