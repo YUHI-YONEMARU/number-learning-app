@@ -1,6 +1,6 @@
 .circleContainer {
-  margin-top: 20px;
-  margin-bottom: 30px; /* ボタン分の余白 */
+  margin-top: 30px;
+  margin-bottom: 20px; /* ボタン分の余白 */
 }
 
 .columnsContainer {
@@ -17,7 +17,7 @@
   align-items: center;
   gap: 5px; /* オブジェクト間の間隔 */
   min-width: 50px;
-  height: calc(100vh - 440px); /* スマホで少し小さめ */
+  height: calc(100vh - 400px); /* スマホで少し小さめ */
   overflow-y: auto; /* スクロール対応 */
   padding-bottom: 8px; /* 横棒のスペース */
 }

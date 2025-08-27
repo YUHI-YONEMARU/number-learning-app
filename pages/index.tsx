@@ -70,7 +70,6 @@ export default function Home() {
         <VisualCircles count={count} />
       </div>
       <div className={styles.countWrapper}>
-        <div className={styles.countDisplay} aria-live="polite">{count}</div>
         <div className={styles.speakerArea}>
          <button
           className={styles.speakerButton}
@@ -80,8 +79,18 @@ export default function Home() {
         🔊
         </button>
          </div>
+        <div className={styles.countDisplay} aria-live="polite">{count}</div>
+        <div className={styles.resetArea}>
+         <button
+          className={styles.resetButton}
+          onClick={handleReset}
+          aria-label="現在の数を読み上げる"
+        >
+        ❌️
+        </button>
+         </div>
       </div>
-      <Counter onIncrement={handleIncrement} onReset={handleReset} count={count} />
+      <Counter onIncrement={handleIncrement} count={count} />
     </div>
   );
 }

@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
+
   max-width: 360px;
 }
 
@@ -19,22 +20,16 @@
   align-items: center;
   flex: 1;
 }
-.reset {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: none;
-  width: 100%;
-}
 
 .button {
   padding: 10px;
-  font-size: 19px;
+  font-size: 1.3rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
   width: 100%; /* 親コンテナの幅を埋める */
+  height: 4.0rem;
   box-sizing: border-box;
   background-color: #007bff;
   color: white;
@@ -48,22 +43,4 @@
   background-color: #cccccc;
   cursor: not-allowed;
   opacity: 0.6;
-}
-
-.resetButton {
-  padding: 10px;
-  font-size: 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 100%; /* スマホで画面幅に */
-  max-width: 360px;
-  box-sizing: border-box;
-  background-color: #6c757d;
-  color: white;
-}
-
-.resetButton:hover {
-  background-color: #5a6268;
 }

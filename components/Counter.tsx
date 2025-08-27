@@ -3,11 +3,10 @@ import styles from '../styles/Counter.module.css';
 
 interface CounterProps {
   onIncrement: (value: number) => void;
-  onReset: () => void;
   count: number;
 }
 
-export default function Counter({ onIncrement, onReset, count }: CounterProps) {
+export default function Counter({ onIncrement, count }: CounterProps) {
   const isPlus100Disabled = count >= 900;
   const isPlus10Disabled = count >= 990;
   const isPlus1Disabled = count >= 999;
@@ -48,15 +47,6 @@ export default function Counter({ onIncrement, onReset, count }: CounterProps) {
           +1
         </button>
       </div>
-      <div className={styles.reset}>
-        <button
-          className={styles.resetButton}
-          onClick={onReset}
-          aria-label="リセット"
-        >
-          リセット
-        </button>
-      </div>
-    </div>
+     </div>
   );
 }
