@@ -8,13 +8,14 @@
   gap: 10px;
   justify-content: center;
   align-items: flex-start;
-  width: 360px; /* スマホ横幅 */
+  width: 100%;
+  max-width: 360px;
 }
 
 .incrementButton {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
   flex: 1;
 }
@@ -28,7 +29,7 @@
 
 .button {
   padding: 10px;
-  font-size: 20px;
+  font-size: 19px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -51,12 +52,13 @@
 
 .resetButton {
   padding: 10px;
-  font-size: 16px;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 360px; /* 常に全幅 */
+  width: 100%; /* スマホで画面幅に */
+  max-width: 360px;
   box-sizing: border-box;
   background-color: #6c757d;
   color: white;
@@ -64,31 +66,4 @@
 
 .resetButton:hover {
   background-color: #5a6268;
-}
-
-@media (max-width: 480px) {
-  .buttonContainer {
-    width: 100%;
-    max-width: 360px;
-  }
-
-  .incrementButtons {
-    gap: 8px;
-  }
-
-  .one {
-    gap: 8px;
-  }
-
-  .button {
-    padding: 10px;
-    font-size: 19px;
-  }
-
-  .resetButton {
-    padding: 10px;
-    font-size: 15px;
-    width: 100%; /* スマホで画面幅に */
-    max-width: 360px;
-  }
 }

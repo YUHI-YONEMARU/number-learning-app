@@ -16,8 +16,8 @@
   justify-content: flex-end; /* 下部に揃える */
   align-items: center;
   gap: 5px; /* オブジェクト間の間隔 */
-  min-width: 60px; /* 列の最小幅 */
-  height: calc(100vh - 400px); /* ユーザーの指定 */
+  min-width: 50px;
+  height: calc(100vh - 440px); /* スマホで少し小さめ */
   overflow-y: auto; /* スクロール対応 */
   padding-bottom: 8px; /* 横棒のスペース */
 }
@@ -35,14 +35,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px; 
-  height: 50px; 
+  width: 40px; /* スマホで少し小さめ */
+  height: 40px;
   background-color: #ffcc80; /* 薄いオレンジ */
   border-radius: 8px;
 }
 
 .circleOne {
-  font-size: 12px;
+  font-size: 10px;
   color: white;
   font-weight: bold;
 }
@@ -51,14 +51,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: #ff8c00; /* 中間のオレンジ */
   border-radius: 8px;
 }
 
 .circleTen {
-  font-size: 12px;
+  font-size: 10px;
   color: white;
   font-weight: bold;
 }
@@ -67,14 +67,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: #e65100; /* 濃いオレンジ */
   border-radius: 10px;
 }
 
 .circleHundred {
-  font-size: 14px;
+  font-size: 10px;
   color: white;
   font-weight: bold;
 }
@@ -84,7 +84,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 70px; /* ユーザー指定：統一 */
+  width: 50px; /* ユーザー指定：統一 */
   height: 5px; /* 横棒の高さ */
   background-color: #e65100; /* 濃いオレンジ */
 }
@@ -94,7 +94,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 70px; /* ユーザー指定：統一 */
+  width: 50px; /* ユーザー指定：統一 */
   height: 5px; /* 横棒の高さ */
   background-color: #ff8c00; /* 中間のオレンジ */
 }
@@ -104,47 +104,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 70px; /* ユーザー指定：統一 */
+  width: 50px; /* ユーザー指定：統一 */
   height: 5px; /* 横棒の高さ */
   background-color: #ffcc80; /* 薄いオレンジ */
-}
-
-@media (max-width: 480px) {
-  .column {
-    min-width: 50px;
-    height: calc(100vh - 440px); /* スマホで少し小さめ */
-  }
-
-  .oneGroup {
-    width: 40px; /* スマホで少し小さめ */
-    height: 40px;
-  }
-
-  .tenGroup {
-    width: 40px;
-    height: 40px;
-  }
-
-  .hundredGroup {
-    width: 40px;
-    height: 40px;
-  }
-
-  .circleOne {
-    font-size: 10px;
-  }
-
-  .circleTen {
-    font-size: 10px;
-  }
-
-  .circleHundred {
-    font-size: 12px;
-  }
-
-  .plateHundred,
-  .plateTen,
-  .plateOne {
-    width: 50px; /* スマホで統一幅を少し小さめ */
-  }
 }

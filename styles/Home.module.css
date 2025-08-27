@@ -13,17 +13,18 @@
 .title {
   margin: 20px 0;
   line-height: 1.15;
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-align: center;
 }
 
 .wrapper {
   width: 100%; /* 360px */
-  max-height: calc(100vh - 340px); /* タイトル60px + ボタン120px + 余白20px */
+  /*max-height: calc(100vh - 340px);  タイトル60px + ボタン120px + 余白20px */
+  max-height: calc(100vh - 180px); /* スマホで余白調整 */
   /*overflow-y: auto;  スクロール可能 */
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 10px;
+  padding: 8px;
   margin: 20px 0;
   display: flex;
   flex-direction: column;
@@ -40,8 +41,8 @@
 
 .countDisplay {
   font-size: 3rem;
-  letter-spacing: 1.2em;
-  text-indent: 1.2em;
+  letter-spacing: 1.0em;
+  text-indent: 1.0em;
   font-weight: bold;
   color: #333;
   text-align: center;
@@ -57,9 +58,9 @@
 }
 
 .speakerButton {
-  padding: 8px;
+  padding: 6px;
   margin-right:8px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   background-color: #ffffff;
   color: #333;
   border: 1px solid #ccc;
@@ -76,27 +77,4 @@
 .speakerButton:focus {
   outline: 2px solid #333;
   outline-offset: 2px;
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.8rem;
-  }
-
-  .wrapper {
-    padding: 8px;
-    margin: 20px 0;
-    max-height: calc(100vh - 180px); /* スマホで余白調整 */
-  }
-
-  .countDisplay {
-    letter-spacing: 1.0em;
-    text-indent: 1.0em;
-
-  }
-
-  .speakerButton {
-    padding: 6px;
-    font-size: 1.2rem;
-  }
 }
