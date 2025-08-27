@@ -37,7 +37,7 @@
   justify-content: center;
   width: 40px; /* スマホで少し小さめ */
   height: 40px;
-  background-color: #ffcc80; /* 薄いオレンジ */
+  background-color: #74EA84; /* 薄いオレンジ */
   border-radius: 8px;
 }
 
@@ -47,13 +47,23 @@
   font-weight: bold;
 }
 
+.plateOne {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px; /* ユーザー指定：統一 */
+  height: 5px; /* 横棒の高さ */
+  background-color: #74EA84; /* 薄いオレンジ */
+}
+
 .tenGroup {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #ff8c00; /* 中間のオレンジ */
+  background-color: #5EC06C; /* 中間のオレンジ */
   border-radius: 8px;
 }
 
@@ -63,13 +73,23 @@
   font-weight: bold;
 }
 
+.plateTen {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px; /* ユーザー指定：統一 */
+  height: 5px; /* 横棒の高さ */
+  background-color: #5EC06C; /* 中間のオレンジ */
+}
+
 .hundredGroup {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #e65100; /* 濃いオレンジ */
+  background-color: #54AC61; /* 濃いオレンジ */
   border-radius: 10px;
 }
 
@@ -86,7 +106,7 @@
   transform: translateX(-50%);
   width: 50px; /* ユーザー指定：統一 */
   height: 5px; /* 横棒の高さ */
-  background-color: #e65100; /* 濃いオレンジ */
+  background-color: #54AC61; /* 濃いオレンジ */
 }
 
 .thousandGroup {
@@ -95,7 +115,7 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #D64E00; /* 濃いオレンジ */
+  background-color: #4A9755; /* 濃いオレンジ */
   border-radius: 10px;
 }
 
@@ -112,25 +132,7 @@
   transform: translateX(-50%);
   width: 50px; /* ユーザー指定：統一 */
   height: 5px; /* 横棒の高さ */
-  background-color: #D64E00; /* 濃いオレンジ */
+  background-color: #4A9755; /* 濃いオレンジ */
 }
 
-.plateTen {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px; /* ユーザー指定：統一 */
-  height: 5px; /* 横棒の高さ */
-  background-color: #ff8c00; /* 中間のオレンジ */
-}
 
-.plateOne {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px; /* ユーザー指定：統一 */
-  height: 5px; /* 横棒の高さ */
-  background-color: #ffcc80; /* 薄いオレンジ */
-}
