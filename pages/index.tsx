@@ -8,7 +8,7 @@ export default function Home() {
   const [count, setCount] = useState(0);
 
   const handleIncrement = (value: number) => {
-    if (count + value <= 1000) {
+    if (count + value <= 10000) {
       setCount((prev) => prev + value);
     }
   };
@@ -29,7 +29,7 @@ export default function Home() {
 
   const numberToJapanese = (num: number): string => {
     if (num === 0) return 'ゼロ';
-    const units = ['', 'じゅう', 'ひゃく', 'せん'];
+    const units = ['', 'じゅう', 'ひゃく', 'せん', 'まん'];
     const digits = ['ゼロ', 'いち', 'に', 'さん', 'よん', 'ご', 'ろく', 'なな', 'はち', 'きゅう'];
     
     let result = '';

@@ -6,7 +6,7 @@
 .columnsContainer {
   display: flex;
   justify-content: center;
-  gap: 30px; /* 列間の間隔 */
+  gap: 14px; /* 列間の間隔 */
 }
 
 .column {
@@ -87,6 +87,32 @@
   width: 50px; /* ユーザー指定：統一 */
   height: 5px; /* 横棒の高さ */
   background-color: #e65100; /* 濃いオレンジ */
+}
+
+.thousandGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #D64E00; /* 濃いオレンジ */
+  border-radius: 10px;
+}
+
+.circleThousand {
+  font-size: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.plateThousand {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px; /* ユーザー指定：統一 */
+  height: 5px; /* 横棒の高さ */
+  background-color: #D64E00; /* 濃いオレンジ */
 }
 
 .plateTen {

@@ -41,8 +41,8 @@
 
 .countDisplay {
   font-size: 3rem;
-  letter-spacing: 1.0em;
-  text-indent: 1.0em;
+  letter-spacing: 0.6em;
+  text-indent: 0.7em;
   font-weight: bold;
   color: #333;
   text-align: center;
