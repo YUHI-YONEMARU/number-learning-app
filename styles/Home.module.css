@@ -1,5 +1,5 @@
 .container {
-  /* min-height: 100vh; */
+  min-height: 90vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
@@ -19,8 +19,9 @@
 
 .wrapper {
   width: 100%; /* 360px */
-  max-height: calc(100vh - 10px); 
-  overflow-y: auto; /*  スクロール可能 */
+  /*max-height: calc(100vh - 340px);  タイトル60px + ボタン120px + 余白20px */
+  max-height: calc(100vh - 10px); /* スマホで余白調整 */
+  /*overflow-y: auto;  スクロール可能 */
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 8px;
