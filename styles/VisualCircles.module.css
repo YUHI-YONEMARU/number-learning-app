@@ -17,7 +17,7 @@
   align-items: center;
   gap: 5px; /* オブジェクト間の間隔 */
   min-width: 50px;
-  height: calc(100vh - 350px); /* スマホで少し小さめ */
+  height: calc(100vh - 380px); /* スマホで少し小さめ */
   overflow-y: auto; /* スクロール対応 */
   padding-bottom: 8px; /* 横棒のスペース */
 }
