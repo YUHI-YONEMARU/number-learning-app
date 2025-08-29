@@ -31,26 +31,48 @@ export default function Home() {
     if (num === 0) return 'ゼロ';
     const units = ['', 'じゅう', 'ひゃく', 'せん', 'まん'];
     const digits = ['ゼロ', 'いち', 'に', 'さん', 'よん', 'ご', 'ろく', 'なな', 'はち', 'きゅう'];
-    
+  
+    // 例外的な読み方（百、千、万）
+    const specialHundreds: { [key: number]: string } = {
+      3: 'さんびゃく',
+      6: 'ろっぴゃく',
+      8: 'はっぴゃく',
+    };
+    const specialThousands: { [key: number]: string } = {
+      1: 'せん',
+      3: 'さんぜん',
+      8: 'はっせん',
+    };
+    const specialTenThousands: { [key: number]: string } = {
+      1: 'いちまん',
+    };
+
     let result = '';
     let n = num;
     let unitIndex = 0;
-    let unit = "";
 
     while (n > 0) {
       const digit = n % 10;
       if (digit > 0) {
-        const digitStr = digit === 1 && unitIndex > 0 ? '' : digits[digit];
-        // 300台
-        if (digit === 3 && unitIndex === 2) {
-          unit = 'びゃく';
-        // 600,800台
-        } else if ( (digit === 6 || digit === 8) && unitIndex === 2) {
-          unit = 'ぴゃく';  
-        } else {
-          unit = units[unitIndex];
+        // let digitStr = digits[digit];
+
+        // 百の位（unitIndex=2）の例外
+        if (unitIndex === 2 && specialHundreds[digit]) {
+          result = specialHundreds[digit] + result;
         }
-        result = digitStr + unit + result;
+        // 千の位（unitIndex=3）の例外
+        else if (unitIndex === 3 && specialThousands[digit]) {
+          result = specialThousands[digit] + result;
+        }
+        // 万の位（unitIndex=4）の例外
+        else if (unitIndex === 4 && specialTenThousands[digit]) {
+          result = specialTenThousands[digit] + result;
+        }
+        // 通常の読み
+        else {
+          const unitStr = digit === 1 && unitIndex > 0 ? units[unitIndex] : digits[digit] + units[unitIndex];
+          result = unitStr + result;
+        }
       }
       n = Math.floor(n / 10);
       unitIndex++;
