@@ -11,11 +11,15 @@ export default function VisualCircles({ count }: VisualCirclesProps) {
   const [tens, setTens] = useState(0);
   const [hundreds, setHundreds] = useState(0);
   const [thousands, setThousands] = useState(0);
+  const [tenThousands, setTenThousands] = useState(0);
+  const [hundredThousands, setHundredThousands] = useState(0);
   const [animateTrigger, setAnimateTrigger] = useState(0); // アニメーション用トリガー
 
   // countが変化したときに、ones, tens, hundredsを更新
   useEffect(() => {
-    const newThousands = Math.floor(count / 1000);
+    const newHundredThousands = Math.floor(count / 100000);
+    const newTenThousands = Math.floor((count % 100000) / 10000);
+    const newThousands = Math.floor((count % 10000) / 1000);
     const newHundreds = Math.floor((count % 1000) / 100);
     const newTens = Math.floor((count % 100) / 10);
     const newOnes = count % 10;
@@ -25,6 +29,8 @@ export default function VisualCircles({ count }: VisualCirclesProps) {
       setAnimateTrigger((prev) => prev + 1);
     }
 
+    setHundredThousands(newHundredThousands);
+    setTenThousands(newTenThousands);
     setThousands(newThousands);
     setHundreds(newHundreds);
     setTens(newTens);
@@ -32,18 +38,51 @@ export default function VisualCircles({ count }: VisualCirclesProps) {
   }, [count, ones]);
 
   const renderCircles = () => {
+    const hundredThousandElements: React.JSX.Element[] = [];
+    const tenThousandElements: React.JSX.Element[] = [];
     const thousandElements: React.JSX.Element[] = [];
     const hundredElements: React.JSX.Element[] = [];
     const tenElements: React.JSX.Element[] = [];
     const oneElements: React.JSX.Element[] = [];
 
-    // 1000のグループ（濃いオレンジ）
+
+    // 100000のグループ
+    for (let i = 0; i < hundredThousands; i++) {
+      hundredThousandElements.push(
+        <motion.div
+          key={`hundredThousand-${i}`}
+          className={styles.hundredThousandGroup}
+          initial={{ opacity: 0, y: -20 }} // 上部からフェードイン
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className={styles.circleHundredThousand}>100000</div>
+        </motion.div>
+      );
+    }
+
+    // 10000のグループ
+    for (let i = 0; i < tenThousands; i++) {
+      tenThousandElements.push(
+        <motion.div
+          key={`tenThousand-${i}`}
+          className={styles.tenThousandGroup}
+          initial={{ opacity: 0, y: -20 }} // 上部からフェードイン
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className={styles.circleTenThousand}>10000</div>
+        </motion.div>
+      );
+    }
+
+    // 1000のグループ
     for (let i = 0; i < thousands; i++) {
       thousandElements.push(
         <motion.div
           key={`thousand-${i}`}
           className={styles.thousandGroup}
-          initial={{ opacity: 0, y: -20 }} // 上部からフェードイン
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
         >
@@ -52,13 +91,13 @@ export default function VisualCircles({ count }: VisualCirclesProps) {
       );
     }
 
-    // 100のグループ（濃いオレンジ）
+    // 100のグループ
     for (let i = 0; i < hundreds; i++) {
       hundredElements.push(
         <motion.div
-          key={`hundred-${i}-${animateTrigger}`} // アニメーションごとにキーを更新
+          key={`hundred-${i}-${animateTrigger}`}
           className={styles.hundredGroup}
-          initial={{ opacity: 0, y: -20 }} // 上部からフェードイン
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
         >
@@ -67,13 +106,13 @@ export default function VisualCircles({ count }: VisualCirclesProps) {
       );
     }
 
-    // 10のグループ（中間のオレンジ）
+    // 10のグループ
     for (let i = 0; i < tens; i++) {
       tenElements.push(
         <motion.div
-          key={`ten-${i}-${animateTrigger}`} // アニメーションごとにキーを更新
+          key={`ten-${i}-${animateTrigger}`}
           className={styles.tenGroup}
-          initial={{ opacity: 0, y: -20 }} // 上部からフェードイン
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
         >
@@ -82,16 +121,16 @@ export default function VisualCircles({ count }: VisualCirclesProps) {
       );
     }
 
-    // 1の単位（薄いオレンジ）
+    // 1の単位
     for (let i = 0; i < ones; i++) {
       oneElements.push(
         <AnimatePresence key={`one-wrapper-${i}`}>
           <motion.div
             key={`one-${i}`}
             className={styles.oneGroup}
-            initial={{ opacity: 0, y: -20 }} // 上部からフェードイン
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, transition: { duration: 0.3 } }} // フェードアウトのみ
+            exit={{ opacity: 0, transition: { duration: 0.3 } }}
             transition={{ duration: 0.3 }}
           >
             <div className={styles.circleOne}>1</div>
@@ -102,6 +141,18 @@ export default function VisualCircles({ count }: VisualCirclesProps) {
 
     return (
       <div className={styles.columnsContainer}>
+        {count >= 100000 && (
+        <div className={styles.column}>
+          <div className={styles.objects}>{hundredThousandElements}</div>
+          <div className={styles.plateHundredThousand} />
+        </div>
+        )}
+        {count >= 10000 && (
+        <div className={styles.column}>
+          <div className={styles.objects}>{tenThousandElements}</div>
+          <div className={styles.plateTenThousand} />
+        </div>
+        )}
         {count >= 1000 && (
         <div className={styles.column}>
           <div className={styles.objects}>{thousandElements}</div>

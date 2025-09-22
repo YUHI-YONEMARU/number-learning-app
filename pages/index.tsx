@@ -8,7 +8,7 @@ export default function Home() {
   const [count, setCount] = useState(0);
 
   const handleIncrement = (value: number) => {
-    if (count + value <= 10000) {
+    if (count + value <= 1000000) {
       setCount((prev) => prev + value);
     }
   };

@@ -6,133 +6,123 @@
 .columnsContainer {
   display: flex;
   justify-content: center;
-  gap: 14px; /* 列間の間隔 */
 }
 
 .column {
-  position: relative; /* 横棒のabsolute配置の基準 */
+  position: relative;
   display: flex;
-  flex-direction: column; /* 通常の順序 */
-  justify-content: flex-end; /* 下部に揃える */
+  flex-direction: column; 
+  justify-content: flex-end;
   align-items: center;
-  gap: 5px; /* オブジェクト間の間隔 */
   min-width: 50px;
-  height: calc(100vh - 380px); /* スマホで少し小さめ */
+  height: calc(100vh - 380px);
   overflow-y: auto; /* スクロール対応 */
-  padding-bottom: 8px; /* 横棒のスペース */
+  padding-bottom: 8px;
 }
 
 .objects {
   display: flex;
   flex-direction: column-reverse; /* 最新のオブジェクトを上部に */
-  justify-content: flex-end; /* 下部に揃える */
+  justify-content: flex-end;
   align-items: center;
   gap: 5px;
   width: 100%;
 }
 
-.oneGroup {
+.oneGroup,
+.tenGroup, 
+.hundredGroup,
+.thousandGroup,
+.tenThousandGroup,
+.hundredThousandGroup
+{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px; /* スマホで少し小さめ */
-  height: 40px;
-  background-color: #74EA84; /* 薄いオレンジ */
+  width: 35px;
+  height: 35px;
   border-radius: 8px;
 }
 
-.circleOne {
+.circleOne,
+.circleTen,
+.circleHundred,
+.circleThousand,
+.circleTenThousand,
+.circleHundredThousand
+{
   font-size: 10px;
   color: white;
   font-weight: bold;
 }
 
-.plateOne {
+.plateOne,
+.plateTen,
+.plateHundred,
+.plateThousand,
+.plateTenThousand,
+.plateHundredThousand
+{
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px; /* ユーザー指定：統一 */
-  height: 5px; /* 横棒の高さ */
-  background-color: #74EA84; /* 薄いオレンジ */
+  width: 40px;
+  height: 5px;
+}
+
+.oneGroup{
+  background-color: #74EA84;
+}
+
+.plateOne{
+  background-color: #74EA84;
 }
 
 .tenGroup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: #5EC06C; /* 中間のオレンジ */
-  border-radius: 8px;
-}
-
-.circleTen {
-  font-size: 10px;
-  color: white;
-  font-weight: bold;
+  background-color: #5EC06C;
 }
 
 .plateTen {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px; /* ユーザー指定：統一 */
-  height: 5px; /* 横棒の高さ */
-  background-color: #5EC06C; /* 中間のオレンジ */
+  background-color: #5EC06C;
 }
 
 .hundredGroup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: #54AC61; /* 濃いオレンジ */
-  border-radius: 10px;
-}
-
-.circleHundred {
-  font-size: 10px;
-  color: white;
-  font-weight: bold;
+  background-color: #54AC61;
 }
 
 .plateHundred {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px; /* ユーザー指定：統一 */
-  height: 5px; /* 横棒の高さ */
-  background-color: #54AC61; /* 濃いオレンジ */
+  background-color: #54AC61;
 }
 
 .thousandGroup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: #4A9755; /* 濃いオレンジ */
-  border-radius: 10px;
-}
-
-.circleThousand {
-  font-size: 10px;
-  color: white;
-  font-weight: bold;
+  background-color: #4A9755;
 }
 
 .plateThousand {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px; /* ユーザー指定：統一 */
-  height: 5px; /* 横棒の高さ */
-  background-color: #4A9755; /* 濃いオレンジ */
+  background-color: #4A9755;
 }
 
+.tenThousandGroup {
+  background-color: #3b7844;
+}
 
+.plateTenThousand {
+  background-color: #3b7844;
+}
+.circleTenThousand
+{
+  font-size: 9px;
+}
+
+.hundredThousandGroup {
+  background-color: #2c5a33;
+}
+
+.plateHundredThousand {
+  background-color: #2c5a33;
+}
+.circleHundredThousand
+{
+  font-size: 8px;
+}

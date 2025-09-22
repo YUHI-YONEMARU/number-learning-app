@@ -7,13 +7,39 @@ interface CounterProps {
 }
 
 export default function Counter({ onIncrement, count }: CounterProps) {
-  const isPlus1000Disabled = count >= 9000;
-  const isPlus100Disabled = count >= 9900;
-  const isPlus10Disabled = count >= 9990;
-  const isPlus1Disabled = count >= 9999;
+  const isPlus100000Disabled  = count >= 900000;
+  const isPlus10000Disabled   = count >= 990000;
+  const isPlus1000Disabled    = count >= 999000;
+  const isPlus100Disabled     = count >= 999900;
+  const isPlus10Disabled      = count >= 999990;
+  const isPlus1Disabled       = count >= 999999;
 
   return (
     <div className={styles.buttonContainer}>
+      {count >= 100000 && (
+        <div className={styles.incrementButton}>
+          <button
+            className={styles.button}
+            onClick={() => onIncrement(100000)}
+            disabled={isPlus100000Disabled}
+            aria-label="プラス100000"
+          >
+            +100000
+          </button>
+        </div>
+      )}
+      {count >= 10000 && (
+        <div className={styles.incrementButton}>
+          <button
+            className={styles.button}
+            onClick={() => onIncrement(10000)}
+            disabled={isPlus10000Disabled}
+            aria-label="プラス10000"
+          >
+            +10000
+          </button>
+        </div>
+      )}
       {count >= 1000 && (
         <div className={styles.incrementButton}>
           <button

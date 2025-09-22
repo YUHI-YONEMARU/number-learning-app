@@ -5,9 +5,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-bottom: 0px; /* ボタン余白 */
-  max-width: 360px; /* スマホ横幅 */
-  margin: 0 auto; /* 中央寄せ */
+  padding-bottom: 0px;
+  max-width: 360px;
+  margin: 0 auto;
 }
 
 .title {
@@ -18,9 +18,9 @@
 }
 
 .wrapper {
-  width: 100%; /* 360px */
+  width: 100%;
   /*max-height: calc(100vh - 340px);  タイトル60px + ボタン120px + 余白20px */
-  max-height: calc(100vh - 10px); /* スマホで余白調整 */
+  max-height: calc(100vh - 10px);
   /*overflow-y: auto;  スクロール可能 */
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -37,10 +37,12 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   position: relative;
+  height: 72px;
+  align-content: center 
 }
 
 .countDisplay {
-  font-size: 3rem;
+  font-size: 2.4rem;
   letter-spacing: 0.6em;
   text-indent: 0.7em;
   font-weight: bold;
@@ -51,16 +53,14 @@
 .speakerArea {
   position: absolute;
   top: 50%;
-  left: 4px;
+  left: 8px;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
 }
 
 .speakerButton {
-  padding: 6px;
-  margin-left:8px;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   background-color: #ffffff;
   color: #333;
   border: 0px solid #ccc;
@@ -82,16 +82,15 @@
 .resetArea {
   position: absolute;
   top: 50%;
-  right: 4px;
+  right: 8px;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
 }
 
 .resetButton {
-  padding: 6px;
-  margin-right:8px;
-  font-size: 1.2rem;
+  
+  font-size: 0.8rem;
   background-color: #ffffff;
   color: #333;
   border: 0px solid #ccc;
