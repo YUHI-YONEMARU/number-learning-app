@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles/Counter.module.css';
+import classnames from "classnames";
 
 interface CounterProps {
   onIncrement: (value: number) => void;
@@ -17,7 +18,7 @@ export default function Counter({ onIncrement, count }: CounterProps) {
   return (
     <div className={styles.buttonContainer}>
       {count >= 100000 && (
-        <div className={styles.incrementButton}>
+        <div className={classnames(styles.incrementButton, styles.increment100000Button)}>
           <button
             className={styles.button}
             onClick={() => onIncrement(100000)}
@@ -29,7 +30,7 @@ export default function Counter({ onIncrement, count }: CounterProps) {
         </div>
       )}
       {count >= 10000 && (
-        <div className={styles.incrementButton}>
+        <div className={classnames(styles.incrementButton, styles.increment10000Button)}>
           <button
             className={styles.button}
             onClick={() => onIncrement(10000)}
@@ -41,7 +42,7 @@ export default function Counter({ onIncrement, count }: CounterProps) {
         </div>
       )}
       {count >= 1000 && (
-        <div className={styles.incrementButton}>
+        <div className={classnames(styles.incrementButton, styles.increment1000Button)}>
           <button
             className={styles.button}
             onClick={() => onIncrement(1000)}
@@ -53,7 +54,7 @@ export default function Counter({ onIncrement, count }: CounterProps) {
         </div>
       )}
       {count >= 100 && (
-        <div className={styles.incrementButton}>
+        <div className={classnames(styles.incrementButton, styles.increment100Button)}>
           <button
             className={styles.button}
             onClick={() => onIncrement(100)}
@@ -65,7 +66,7 @@ export default function Counter({ onIncrement, count }: CounterProps) {
         </div>
       )}
       {count >= 10 && (
-        <div className={styles.incrementButton}>
+        <div className={classnames(styles.incrementButton, styles.increment10Button)}>
           <button
             className={styles.button}
             onClick={() => onIncrement(10)}
@@ -76,7 +77,7 @@ export default function Counter({ onIncrement, count }: CounterProps) {
           </button>
         </div>
       )}
-      <div className={styles.incrementButton}>
+      <div className={classnames(styles.incrementButton, styles.increment1Button)}>
         <button
           className={styles.button}
           onClick={() => onIncrement(1)}
